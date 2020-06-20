@@ -12,7 +12,13 @@ layout: compress
 </head>
 <body>
 <header>
-    <a href="/">Loefbijter</a>
+    <nav class="overlay-menu">
+        <ul>
+            {% for item in site.data.menu.items %}
+            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
 </header>
 
 {{ content }}
