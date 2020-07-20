@@ -1,4 +1,8 @@
 items:
 
-  - title: Home
-    url: index.html
+  - title: home
+    url: /
+  - title: over ons
+    url: /over-ons
+  - title: contact
+    url: /contact
