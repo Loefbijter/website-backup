@@ -68,4 +68,3 @@ plugins:
   - jekyll-autoprefixer
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-purgecss

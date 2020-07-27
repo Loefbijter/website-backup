@@ -1,12 +1,42 @@
-<nav>
-    <div id="logo-container">
-        <img alt="Logo met tekst nijmeegse studenten zeil vereniging de loefbijter" src="/assets/images/headerlogo.png"/>
+<!--<nav class="navbar navbar-default">-->
+<!--    <div id="logo-container">-->
+<!--        <img alt="Logo met tekst nijmeegse studenten zeil vereniging de loefbijter" src="/assets/images/headerlogo.png"/>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <ul>-->
+<!--            {% for item in site.data.menu.items %}-->
+<!--            <li><a href="{{ item.url }}">{{ item.title }}</a></li>-->
+<!--            {% endfor %}-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</nav>-->
+
+
+<nav class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+        </button>
+        <a href="/"><img id="navbar-brand-img" alt="Logo met tekst nijmeegse studenten zeil vereniging de loefbijter" src="/assets/images/headerlogo.png"/></a>
     </div>
-    <div class="main-menu">
-        <ul>
+    <div id="navbar">
+        <ul class="nav navbar-nav">
             {% for item in site.data.menu.items %}
-            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                {% if item.subitems %}
+                    <div class="dropdown">
+                        <a href="{{ item.url }}" class="dropbtn">{{ item.title }}
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-content" role="menu">
+                            {% for subitem in item.subitems %}
+                                <a href="{{ subitem.url }}">{{ subitem.title }}</a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% else %}
+                    <a href="{{ item.url }}">{{ item.title }}</a>
+                {% endif %}
             {% endfor %}
         </ul>
-    </div>
+    </div><!--/.nav-collapse -->
 </nav>

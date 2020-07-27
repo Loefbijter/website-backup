@@ -6,3 +6,6 @@ items:
     url: /over-ons
   - title: contact
     url: /contact
+    subitems:
+      - title: sponsors
+        url: /sponsors
