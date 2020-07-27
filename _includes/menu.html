@@ -1,0 +1,12 @@
+<nav>
+    <div id="logo-container">
+        <img alt="Logo met tekst nijmeegse studenten zeil vereniging de loefbijter" src="/assets/images/headerlogo.png"/>
+    </div>
+    <div class="main-menu">
+        <ul>
+            {% for item in site.data.menu.items %}
+            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>
