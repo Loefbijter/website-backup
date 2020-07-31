@@ -1,42 +1,36 @@
-<!--<nav class="navbar navbar-default">-->
-<!--    <div id="logo-container">-->
-<!--        <img alt="Logo met tekst nijmeegse studenten zeil vereniging de loefbijter" src="/assets/images/headerlogo.png"/>-->
-<!--    </div>-->
-<!--    <div>-->
-<!--        <ul>-->
-<!--            {% for item in site.data.menu.items %}-->
-<!--            <li><a href="{{ item.url }}">{{ item.title }}</a></li>-->
-<!--            {% endfor %}-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</nav>-->
-
-
-<nav class="container-fluid">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
+<header class="page-header">
+    <nav class="navbar">
+        <button onclick="window.loefbijter.openMenu()" aria-label="Open Mobile Menu" class="open-mobile-menu fa-lg">
+            <i class="material-icons" aria-hidden="true">menu</i>
         </button>
-        <a href="/"><img id="navbar-brand-img" alt="Logo met tekst nijmeegse studenten zeil vereniging de loefbijter" src="/assets/images/headerlogo.png"/></a>
-    </div>
-    <div id="navbar">
-        <ul class="nav navbar-nav">
-            {% for item in site.data.menu.items %}
-                {% if item.subitems %}
-                    <div class="dropdown">
-                        <a href="{{ item.url }}" class="dropbtn">{{ item.title }}
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-content" role="menu">
-                            {% for subitem in item.subitems %}
-                                <a href="{{ subitem.url }}">{{ subitem.title }}</a>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                {% else %}
-                    <a href="{{ item.url }}">{{ item.title }}</a>
-                {% endif %}
-            {% endfor %}
+
+        <a href="/"><img id="navbar-brand-img" alt="Logo nijmeegse studenten zeil vereniging de loefbijter" src="/assets/images/headerlogo.png"/></a>
+
+        <ul class="top-menu-wrapper">
+            <div class="top-menu">
+                <div class="mob=block">
+                    <img id="sidebar-brand-img" alt="Logo nijmeegse studenten zeil vereniging de loefbijter" src="/assets/images/headerlogo.png"/>
+                    <button onclick="window.loefbijter.closeMenu()" aria-label="Close Mobile Menu" class="close-mobile-menu fa-lg">
+                        <i class="material-icons" aria-hidden="true">clear</i>
+                    </button>
+                </div>
+                    {% for item in site.data.menu.items %}
+                        {% if item.subitems %}
+                            <div class="dropdown">
+                                <a href="{{ item.url }}" class="dropbtn">{{ item.title }}
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-content" role="menu">
+                                    {% for subitem in item.subitems %}
+                                        <a href="{{ subitem.url }}">{{ subitem.title }}</a>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% else %}
+                            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+            </div>
         </ul>
-    </div><!--/.nav-collapse -->
-</nav>
+    </nav>
+</header>

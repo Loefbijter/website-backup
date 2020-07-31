@@ -2,15 +2,5 @@
 ---
 
 @import "bootstrap/bootstrap";
+@import "base";
 @import "navbar";
-
-body {
-  font-family: "Open Sans", sans-serif;
-  color: #8E9DAE;
-  background-color: #fff;
-}
-body, html {
-  margin: 0;
-  padding: 0;
-}
-
